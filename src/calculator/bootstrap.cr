@@ -42,3 +42,20 @@ def main
 end
 
 main()
+
+# TODO:
+# Fork the lambda build runtime, pass in Lambda::Builder::HTTPRequest
+# to the handler instead of just the body. Then make a response class.
+# The handler only has to return the response object. This will allow us
+# to forgo the to_json, JSON.parse, to_json that it's currently going through.
+
+# runtime.register_handler("httpevent") do |request|
+#   context = HTTP::Server::Context.new(req, HTTP::Server::Response.new(io))
+
+#   art_res = ADI.container.athena_routing_route_handler.handle context
+
+#   Lambda::Builder::HTTPResponse.new(
+#     art_res.status_code,
+#     art_res.body,
+#   )
+# end
