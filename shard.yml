@@ -1,0 +1,15 @@
+name: pokemon-type-calculator
+version: 0.1.0
+
+authors:
+  - Andrew Crotwell <awcrotwell@gmail.com>
+
+description: |
+  A calculator that will return the type effectiveness of a pokemon
+
+dependencies:
+  athena:
+    github: athena-framework/athena
+    version: ~> 0.12.0
+
+license: MIT
