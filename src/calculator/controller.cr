@@ -1,8 +1,3 @@
-require "json"
-require "athena"
-require "./pokemon"
-require "./type_data"
-
 @[ADI::Register]
 struct PokemonConverter < ART::ParamConverterInterface
   def apply(request : HTTP::Request, configuration : Configuration) : Nil
@@ -17,8 +12,7 @@ struct PokemonConverter < ART::ParamConverterInterface
   end
 end
 
-# Define a controller
-class ExampleController < ART::Controller
+class PokemonController < ART::Controller
   @[ART::ParamConverter("pokemon", converter: PokemonConverter)]
   @[ART::Get("/pokemon/:pokemon")]
   def index(pokemon : Pokemon) : ART::Response
@@ -47,13 +41,3 @@ class ExampleController < ART::Controller
     )
   end
 end
-
-# Run the server
-def main
-  if ENV["SERVERLESS"]?
-  else
-    ART.run
-  end
-end
-
-main()

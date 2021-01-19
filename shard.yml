@@ -7,9 +7,17 @@ authors:
 description: |
   A calculator that will return the type effectiveness of a pokemon
 
+targets:
+  bootstrap:
+    main: src/calculator/bootstrap.cr
+
 dependencies:
   athena:
     github: athena-framework/athena
     version: ~> 0.12.0
+
+  lambda_builder:
+    github: spinscale/crystal-aws-lambda
+    branch: master
 
 license: MIT

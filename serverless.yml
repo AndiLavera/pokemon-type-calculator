@@ -1,0 +1,17 @@
+service: crystal-hello-world
+
+provider:
+  name: aws
+  runtime: provided
+
+package:
+  artifact: ./bootstrap.zip
+
+functions:
+  httpevent:
+    handler: httpevent
+    events:
+      - http:
+          memorySize: 128
+          path: main
+          method: get
