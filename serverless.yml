@@ -1,4 +1,4 @@
-service: crystal-hello-world
+service: crystal-pokemon
 
 provider:
   name: aws
@@ -13,5 +13,5 @@ functions:
     events:
       - http:
           memorySize: 128
-          path: main
+          path: /pokemon/{pokemon}
           method: get
